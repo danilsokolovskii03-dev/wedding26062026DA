@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Serif+JP:wght@200..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение на свадьбу</title>
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            padding: 0px;
+
+            margin: 0;
+            box-sizing: border-box;
+        }
+        h1 {
+            color: black;
+            font-size: 6em;
+            font-family: "Great Vibes", cursive;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        #rsvp {
+            margin-top: 20px;
+        }
+        input[type="text"], input[type="email"] {
+            padding: 12px;
+            margin: 10px 0;
+            width: 90%;
+            max-width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    
+        .image-container {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .rounded-image {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            border-radius: 15px; /* Скругление краев на 15 пикселей */
+            width: 200px; /* Ширина изображения */
+            height: auto; /* Автоматическая высота для сохранения пропорций */
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .overlay-text {
+            position: absolute;
+            top: 9%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 10em;
+            text-shadow: 15px 15px 2px rgba(0, 0, 0, 0.7);
+        }
+        .overlay-text1 {
+            position: absolute;
+            top: 17.5%;
+            left: 58%;
+            color: white;
+            font-size: 2em;
+            text-shadow: 1px 1px 1px rgba(5, 5, 5, 0.841);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: "PT Sans", sans-serif;
+        }
+        .overlay-text2, .overlay-text3,.overlay-text3, .overlay-bus {
+            position: absolute;
+            color: white;
+            text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.7);
+        }
+        .overlay-text2 {
+            bottom: 10%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            font-size: 7em;
+        }
+        .overlay-text4 {
+            position: absolute;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            top: 9%;
+            left: 65%;
+            transform: translate(-50%, -50%);
+            font-size: 3em;
+            font-family: "Great Vibes", cursive;
+        }
+        .overlay-text5 {
+            position: absolute;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            top: 6%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3em;
+            font-family: "Great Vibes", cursive;
+        }
+        .overlay-text6 {
+            position: absolute;
+            top: 9%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 1em;
+            font-family: "Noto Serif JP", cursive; 
+        }
+        .overlay-bus {
+            top: 15%;
+            left: 1%;
+            font-size: 2em;
+        }
+        .animated-word {
+            position: absolute;
+            bottom: 5%;
+            left: 46.4%;
+            transform: translate(-50%, -50%);
+            color: white;
+            animation: bounce 1.5s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-40px);
+            }
+            60% {
+                transform: translateY(-20px);
+            }
+        }
+        .info-container {
+            margin: 20px 0;
+        }
+        .text {
+            padding: 0 10%;
+            font-size: 1em;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 150px;
+        }
+        .block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 40%;
+        }
+        .line {
+            height: 2px;
+            background-color: white;
+            margin: 5px 0;
+            width: 100%;
+        }
+        .line-text {
+            margin: 5px 0;
+            font-weight: bold;
+            white-space: nowrap;
+            font-size: 3em;
+        }
+        .number {
+            font-size: 7em;
+            margin: 0 20px 20px;
+        }
+
+        /* Медиа-запросы для адаптивности */
+        @media (max-width: 1200px) {
+            h1 {
+                font-size: 5em;
+            }
+            .overlay-text {
+                font-size: 8em;
+            }
+            .overlay-text1 {
+                font-size: 1.6em;
+            }
+            .overlay-text2 {
+                font-size: 5em;
+            }
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 4em;
+            }
+            .overlay-text {
+                font-size: 6em;
+            }
+            .overlay-text1 {
+                font-size: 1.4em;
+            }
+            .overlay-text2 {
+                font-size: 4em;
+            }
+            .text {
+                font-size: 1.1em;
+                padding: 0 5%;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 3.5em;
+            }
+            .overlay-text {
+                font-size: 5em;
+            }
+            .overlay-text1 {
+                font-size: 1.2em;
+            }
+            .overlay-text2 {
+                font-size: 3em;
+            }
+            .number {
+                font-size: 6em;
+            }
+        }
+        table {
+            width: 100%; /* Ширина таблицы 100% */
+            border-collapse: collapse; /* Убираем пробелы между ячейками */
+            margin-top: 5px; /* Отступ сверху */
+            margin-left: 5px;
+        }
+        th, td {
+           /* border: 1px solid #333; /* Граница ячеек */
+            text-align: center; /* Выравнивание текста в ячейках */
+        }
+        th {
+            background-color: #f2f2f2; /* Цвет фона заголовков */
+        }
+      
+        .transparent-button {
+    background-color: transparent; /* Прозрачный фон */
+    border: 1px solid whitesmoke; /* Рамка */
+    color: whitesmoke; /* Цвет текста */
+    padding: 10px 20px; /* Отступы */
+    text-align: center; /* Выравнивание текста по центру */
+    text-decoration: none; /* Без подчеркивания */
+    display: inline-block; /* Встроенный блок */
+    font-size: 12px; /* Размер шрифта */
+    font-family: 'Noto Serif JP';
+    cursor: pointer; /* Указатель курсора при наведении */
+    border-radius: 5px; /* Закругление углов */
+}
+.transparent-button:hover {
+    background-color: whitesmoke; /* Цвет фона при наведении */
+    color: black; /* Цвет текста при наведении */
+}
+.circular-image {
+            width: 70px; /* Ширина изображения */
+            height: 70px; /* Высота изображения */
+            border-radius: 50%; /* Делает картинку круглой */
+            object-fit: cover; /* Обеспечивает обрезку изображения по размеру */
+}
+
+#countdown {
+  display:flex;
+  gap:var(--gap);
+  align-items:flex-start; /* цифры будут на одной линии сверху */
+  justify-content:center;
+  background:var(--card);
+  padding:12px 20px;
+  border-radius:12px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+  white-space:nowrap;
+  overflow-x:auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Каждый блок — колонка: цифра сверху, подпись снизу */
+.time-block {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  min-width:72px;
+}
+
+/* Цифры — большие; благодаря align-items:flex-start у контейнера они будут на одной горизонтальной линии */
+.time-value {
+  font-size:30px;
+  font-weight:800;
+  line-height:1;
+  color:var(--text);
+}
+
+/* Подписи под цифрами */
+.time-label {
+  margin-top:6px;
+  font-size:13px;
+  color:var(--muted);
+  text-align:center;
+}
+
+#status {
+  margin-top:12px;
+  text-align:center;
+  color:var(--accent);
+  font-weight:600;
+}
+
+/* Мобильная адаптация: уменьшаем цифры, но сохраняем расположение на одной строке */
+@media (max-width:420px){
+  .time-value { font-size:20px; }
+  .time-block { width:500px; }
+  #countdown { gap:12px; padding:10px; }
+}
+.photo-timer-wrap { position: relative; display: inline-block; } 
+.photo-timer-wrap .photo { display: block; width: 100%; height: auto; } 
+.overlay-timer { position: absolute; top: 78%; left: 50%; transform: translateX(-50%); padding: 10px 14px; border-radius: 12px; display: flex; gap: 14px; align-items: center; color: #fff; font-family: "Segoe UI", Roboto, Arial, sans-serif; /* Красивый градиент фона */ background: linear-gradient(135deg, rgba(255, 92, 92, 0.95), rgba(255, 178, 72, 0.95)); box-shadow: 0 8px 20px rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.6); backdrop-filter: blur(2px); } 
+.time-block { text-align: center; min-width: 70px; } .time-value { font-size: 22px; font-weight: 700; line-height: 1; letter-spacing: 0.5px; text-shadow: 0 2px 4px rgba(0,0,0,0.25); } .time-label { font-size: 14px; margin-top: 4px; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.3); } @media (max-width: 900px) {
+     .overlay-timer { padding: 9px 12px; gap: 12px; } .time-value { font-size: 20px; } } @media (max-width: 600px) { 
+        .overlay-timer { padding: 8px 10px; gap: 8px; } .time-value { font-size: 26px; font-weight: 350; }
+         .time-label { font-size: 14px; } }
+
+.timer-title {
+  position: absolute;
+  top: 66%; /* выше таймера */
+  left: 50%;
+  transform: translateX(-50%);
+  
+  width: 80%;          /* такая же ширина как у таймера */
+  max-width: 500px;   /* если используешь ограничение */
+
+  text-align: center;
+  color: #fff;
+  font-family: Great Vibes, cursive;
+  font-size: 32px;
+  font-weight: 250;
+
+  padding: 8px 12px;
+  border-radius: 12px;
+
+
+}
+form { margin-top: 8px; }
+      label { display: block; margin-bottom: 10px; }
+      input[type="text"] {
+width: 100%;
+max-width: 100%;
+padding: 8px;
+box-sizing: border-box;
+font-size: 14px;
+background-color: #582413;
+
+/* убрать все границы и оставить только нижнюю белую */
+border: none;
+border-bottom: 1px solid #ffffff;
+
+/* текст и поведение */
+color: #ffffff;
+outline: none;
+border-radius: 0;
+transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+/* плейсхолдер белый полупрозрачный */
+input[type="text"]::placeholder {
+color: rgba(255,255,255,0.8);
+}
+
+/* при фокусе подчерк чуть ярче и лёгкая тень */
+input[type="text"]:focus {
+border-bottom-color: #ffffff;
+box-shadow: 0 4px 12px rgba(88,36,19,0.12);
+}
+      .checkbox { margin-bottom: 8px; }
+      button { padding: 8px 14px; font-size: 14px; cursor: pointer; }
+      .status { margin-top: 12px; font-size: 14px; }
+      .status.ok { color: green; }
+      .status.err { color: red; }
+      /* чекбоксы в одной строке */
+.row {
+  display: flex;
+  /* align-items: center; */
+  gap: 12px;              /* расстояние между группами чекбокс+метка */
+  text-align: start;
+  margin-bottom: 8px;
+}
+
+.modal-backdrop {
+position: fixed;
+inset: 0;
+display: none; 
+align-items: center;
+justify-content: center;
+background: rgba(0,0,0,0.55);
+z-index: 1000;
+}
+.modal {
+background: white;
+color: #222;
+border-radius: 12px;
+padding: 20px;
+width: 92%;
+max-width: 420px;
+box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+text-align: left;
+}
+.modal h3 { margin-top:0; font-family: "Great Vibes", cursive; font-size: 28px; }
+.modal p { margin: 12px 0 18px; font-size: 15px; color: #444; }
+.modal .actions { display:flex; gap:10px; justify-content: flex-end; }
+.btn { padding: 8px 14px; border-radius: 8px; cursor: pointer; border: none; font-size: 14px; }
+.btn-ghost { background: transparent; border: 1px solid #999; color: #333; }
+.btn-primary { background: #7b3b2b; color: white; border: 1px solid rgba(0,0,0,0.1); }
+
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="images/start3.jpg" alt="Свадебное фото">
+        <div class="overlay-text">WEDDING</div>
+        <div class="overlay-text1">ДАНИИЛ & АЛЕСЯ</div>
+        <div class="overlay-text2">D|A</div>
+        <div class="animated-word">
+            <img src="images/arrow3.jpg" alt="Стрелка">
+        </div>
+    </div>
+    <div class="info-container">
+        <p     style="color:#70341f;
+        font-size: 2.9em;
+        font-family: Great Vibes ";>Дорогие родные и друзья!</p>
+    </div>
+    <div class="text">
+        <p style="color: #70341f;">
+        ВОТ И НАСТУПИЛО ВРЕМЯ СООБЩИТЬ ВАМ ПРИЯТНОЕ ИЗВЕСТИЕ - МЫ ЖЕНИМСЯ! <br><br>
+        ДА, ДА! СЛУЧИЛОСЬ НЕИЗБЕЖНОЕ. <br><br>
+        ЗАБУДЬТЕ ОБО ВСЕХ ДЕЛАХ, ОТМЕНИТЕ ЗАПЛАНИРОВАННЫЕ ВСТРЕЧИ! ВЕДЬ ВЫ НИ ЗА ЧТО НА СВЕТЕ НЕ ДОЛЖНЫ ПРОПУСТИТЬ САМОЕ ГЛАВНОЕ ТОРЖЕСТВО НАШЕЙ ЖИЗНИ - НАШ ПЕРВЫЙ СЕМЕЙНЫЙ ПРАЗДНИК, КОТОРЫЙ МЫ БЫЛИ БЫ СЧАСТЛИВЫ РАЗДЕЛИТЬ ВМЕСТЕ С ВАМИ!
+        </p>
+    </div>
+<div style="background-color:#582413; color: white;">
+    <div style="font-size: 2em; margin: 60px 0 0 0;">июнь</div>
+    <div class="container">
+        <div class="block left">
+            <div class="line"></div>
+            <p style="font-size: 2em; margin-left: 7px;">пятница</p>
+            <div class="line"></div>
+        </div>
+        <p class="number">26</p>
+        <div class="block right">
+            <div class="line"></div>
+            <p style="font-size: 2em;">15:00</p>
+            <div class="line"></div>
+        </div>
+    </div>
+    <div style="font-size: 2em; margin: 0 0 30px 0; padding-bottom: 5px;">2026</div>
+</div>
+    <div class="image-container">
+        <img src="images/date.jpg" width="600" height="500" alt="Свадебное фото">
+    </div>
+   <div style="background-color: #582413; color:white;" >
+        <div style="  font-size: 2.7em; font-family: Noto Serif JP, cursive;">ПЛАН ДНЯ</div>
+        <div style=" margin-left: 40%; font-size: 2.9em; font-family: Great Vibes , cursive; padding-top:0px;">timing</div>
+        <div class="">
+            <table style="width: 100%; border-collapse: collapse;">
+                <tbody>
+                    <tr>
+                        <td style="padding: 10px;; width: 50% ;border-bottom: 2px solid #ffffff ;; ">
+                            <img src="images/bus.jpg" style="width: 60px; height: 60px; " alt="Бус">
+                            <div style="font-size: 2em;">13:00</div>
+                            <div style="font-size: 13px; text-align: center ;">ТРАНСФЕР ИЗ ВОЛКОВЫСКА</div>
+                        </td>
+                        <td style="padding: 10px; font: 1.2em Great Vibes;border-left: 2px solid ; width: 50%;">На свадьбе будет организован трансфер, чтобы обеспечить комфортное и беззаботное передвижение всех гостей.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 5px; width: 50%; font: 1.2em Great Vibes; ">
+                            Венчание — это священное таинство, во время которого соединяются сердца и души двух людей. В этот день, мы обменяемся клятвами перед Богом и близкими, подтвердив нашу любовь и верность.
+                        </td>
+                        <td style="padding: 10px; border-left: 2px solid #ffffff; width: 50%;  border-bottom: 2px solid #ffffff ;">
+                            <img src="images/ven.jpg" style="width: 60px; height: 60px;" alt="Бус">
+                            <div style="font-size: 2em;">14:00</div>
+                            <div style="font-size: 13px; text-align: center;">ВЕНЧАНИЕ</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; width: 50%;">
+                            <img src="images/shampo.jpg" style="width: 65px; height: 65px;" alt="Бус">
+                            <div style="font-size: 2em;">15:00</div>
+                            <div style="font-size: 13px; text-align: center;">СБОР ГОСТЕЙ</div>
+                        </td>
+                        <td style="padding: 10px; font: 1.2em Great Vibes; border-left: 2px solid #ffffff; width: 50%;">
+                            Легкие напитки, закуски и фотосессия на фоне декораций.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+        <div style="color:#70341f">
+            <p style="text-align: center; font-size: 2.5em; font-family: Noto Serif JP; margin-bottom: 0px; margin-top: 35px;">ЛОКАЦИИ</p>
+            <p style="text-align: center; font-size: 1.7em; font-family: Great Vibes; margin-bottom:  5px;">Свадебный шатер Жукевичи</p>
+            <p style="text-align: center; font-size: 0.8em; font-family: Playfair Display; margin: 0px;">Гродненский район, Коптёвский сельсовет, деревня Жукевичи</p>
+        </div>
+   
+    <div style="position: relative; display: flex; justify-content: center; align-items: center;">
+        <video id="myVideo" width="390.39" height="240" loop autoplay muted>
+            <source src="images/video.mp4" type="video/mp4">
+        </video>
+        <button class="transparent-button" 
+        style="position: absolute; top: 75%; left: 50%; transform: translate(-50%, -50%); border-radius: 20px; padding: 10px 20px; cursor: pointer;"
+        onclick="window.location.href='https://yandex.ru/maps/-/CPqpEU3x';">
+    НА КАРТЕ
+</button>
+    </div>
+    <div style="color:#70341f">
+        <p style="text-align: center; font-size: 1.7em; font-family: Great Vibes; margin-bottom: 5px;">Костёл Вознесения Девы Марии</p>
+        <p style="text-align: center; font-size: 0.8em; font-family: Playfair Display; margin-bottom: 20px;">Гродненский район, агрогородок Коптёвка</p>
+        <div  style="position: relative; display: flex; justify-content: center; align-items: center;">
+            <img src="images/kostel.jpg" width="390.39"  alt="Костёл">
+            <button class="transparent-button" 
+            style="position: absolute; top: 85%; left: 50%; transform: translate(-50%, -50%); border-radius: 20px; padding: 10px 20px; cursor: pointer;"
+            onclick="window.location.href='https://yandex.ru/maps/-/CPqpyXoU'">
+        НА КАРТЕ
+    </button>
+    </div>
+    <div style="color:#70341f">
+        <p  style="text-align: center; font-size: 2.5em; font-family: Noto Serif JP; margin-bottom: 15px; margin-top: 35px;">DRESS CODE</p>
+        <p style="text-align: center; font-size: 1.4em; font-family: Great Vibes; margin-bottom: 15px; margin-left: 2px;">Просим Вас при выборе нарядов на наше торжество отдать предпочтение оттенкам ниже:</p>
+        <table style="width: 100%; border-collapse: collapse; position: relative; display: flex; justify-content: center; align-items: center;">
+            <tr>
+                <td style=" padding: 5px; text-align: center;"> 
+                <img src="images/black.jpg"  class="circular-image"></td>
+                <td style=" padding: 5px; text-align: center;"> 
+                    <img src="images/marron.jpg"  class="circular-image"></td>
+                <td style=" padding: 5px; text-align: center;"> 
+                    <img src="images/marron1.jpg"  class="circular-image"></td>
+                <td style=" padding: 5px; text-align: center;"> 
+                    <img src="images/marron2.jpg"  class="circular-image"></td>
+                <td style=" padding: 5px; text-align: center;"> 
+                    <img src="images/marron4.jpg"  class="circular-image"></td>
+            </tr>
+        </table>
+        <table style="width: 100%; border-collapse: collapse; position: relative; display: flex; justify-content: center; align-items: center; margin-top: 0px;">
+            <tr>
+                <td style="padding: 5px; text-align: center;"> 
+                <img src="images/5.jpg"  class="circular-image"></td>
+                <td style=" padding: 5px; text-align: center;"> 
+                    <img src="images/6.jpg"  class="circular-image"></td>
+                <td style=" padding: 5px; text-align: center;"> 
+                    <img src="images/7jpg.jpg"  class="circular-image"></td>
+                <td style=" padding: 5px; text-align: center;"> 
+                    <img src="images/8.jpg"  class="circular-image"></td>
+            </tr>
+        </table>
+    </div>
+    <div style="background-color: #582413; color: white; margin-top: 35px;">
+        <div style="font-size: 3em; font-family: Great Vibes, cursive; padding-top: 10px;">Подсказки</div>
+        <div style=" font-size: 1em; font-family: Noto Serif JP, cursive;">МЫ РЕШИЛИ СОБРАТЬ ИНФОРМАЦИЮ - ОТВЕТЫ НА САМЫЕ ПОПУЛЯРНЫЕ ВОПРОСЫ</div>
+        <div style=" margin-top: 40px; text-align:left;font-size: 1em; font-family: Noto Serif JP; font-stretch: ultra-expanded; margin-left: 10px;">ЧТО ДАРИТЬ?</div>
+        <div style="text-align:left;font-size: 0.8em; font-family: Noto Serif JP; margin-left: 10px; font-weight: 200;">Ваша улыбка и хорошее настроение - главное для нас в этот вечер!
+            Если вы захотите сделать нам ценный и нужный подарок, мы будем очень благодарны за вклад в бюджет нашей молодой семьи.</div>
+            <div style=" margin-top: 20px; text-align:left;font-size: 1em; font-family: Noto Serif JP; font-stretch: ultra-expanded; margin-left: 10px;">ЦВЕТЫ</div>
+        <div style=" margin-bottom: 0px;padding-bottom: 15px;text-align:left;font-size: 0.8em; font-family: Noto Serif JP; margin-left: 10px; font-weight: 200;">Пусть наш свадебный день станет началом чего-то доброго. Будем признательны, если вы замените букет цветов подарками для детей‑сирот, которым это принесёт много радости. Давайте вместе сделаем этот день особенным!       
+         </div>
+    </div>
+    <div class="photo-timer-wrap"> <img src="images/time.jpg" width="390.39" alt="Костёл" class="photo" margin="0px"> 
+        <div class="timer-title">Мы станем семьёй через:</div>
+        <div id="countdown" aria-live="polite" class="overlay-timer"> 
+            <div class="time-block"> 
+                <div class="time-value" id="days">00</div> 
+                <div class="time-label" id="label-days">дней</div> 
+            </div> 
+            <div class="time-block"> 
+                <div class="time-value" id="hours">00</div>
+                 <div class="time-label" id="label-hours">часов</div> 
+                </div> 
+                <div class="time-block"> 
+                    <div class="time-value" id="minutes">00</div>
+                     <div class="time-label" id="label-minutes">минут</div>
+                     </div> 
+                     <div class="time-block"> 
+                        <div class="time-value" id="seconds">00</div> 
+                        <div class="time-label" id="label-seconds">секунд</div> 
+                    </div> 
+                </div> 
+                <div id="status">
+            </div> 
+        </div>
+    </div>
+    <div style="background-color: #582413; color: white;">
+        <div style="font-size: 3em; font-family:Playfair Display ; font-weight: lighter; ;">АНКЕТА</div>
+        <div style="font-size: 2.7em; font-family: Great Vibes, cursive;font-weight: 300; margin-bottom: 15px;">Анкета гостя</div>
+        <div style="font-size: 1.2em; text-align: center; margin-bottom: 20px;">Будем очень признательны, если Вы подтвердите своё присутствие и заполните анкету до 1 июня.</div>
+            <form id="simpleForm">
+                <label style=" font-size: 1em; text-align: start; margin: 10px; font-weight: 100; font-family:Playfair Display"> Имя и фамилия</label>
+              <label style=" font-size: 0.8em; text-align: start; margin: 10px; font-weight: 100; font-family:Noto Serif JP  ;">
+                (Если Вы будете со своей семьёй/второй половинкой, укажите все имена).
+                <input type="text" name="text" id="text" required placeholder="Иван Иванов/Мария Иванова" style="width:100%; padding:6px;"/>
+              </label>
+          <label style=" font-size: 1em; text-align: start; margin: 10px; font-weight: 100; font-family:Playfair Display">Подтвердите свое присутстиве:</label>
+              <div class="row" style="text-align: start; margin: 10px;">
+                <input type="checkbox" id="checkboxA" name="checkboxA" />
+                <label for="checkboxA" style="font-family:Noto Serif JP;font-weight: 100;">Да, с удовольствием!</label>
+            
+              </div>
+              <div class="row" style="text-align: start;  margin: 10px;">
+              <input type="checkbox" id="checkboxB" name="checkboxB" />
+              <label for="checkboxB" style="font-family:Noto Serif JP;font-weight: 100;">К сожалению не смогу.</label>
+              </div>
+          
+          
+              <button class="transparent-button" type="submit" style=" font-family:Playfair Display; margin-bottom: 15px;">Отправить</button>
+            </form></div>
+        
+    </div>
+
+    <footer style="background-color: #582413; color: white; padding: 20px; text-align: center;">26•06•2026</footer>
+    <div class="player">
+        
+        <audio id="bgAudio" loop preload="auto">
+          <source src="images/MOT.mp3" type="audio/mpeg">
+          Ваш браузер не поддерживает аудио.
+        </audio>
+    
+        <div id="modal" class="modal-backdrop" role="dialog" aria-modal="true" style="display:none;">
+
+            <div class="modal" role="document">
+            
+            <h3>Включить музыку?</h3>
+            
+            <p>Хотите включить фоновую музыку на этой странице? Вы сможете в любой момент остановить её.</p>
+            
+            <div class="actions">
+            
+            <button id="dismissBtn" class="btn btn-ghost">Нет, спасибо</button>
+            
+            <button id="enableBtn" class="btn btn-primary">Включить музыку</button>
+            
+            </div>
+            
+            </div>
+            
+            </div>
+   
+
+</body>
+<script>
+
+    (function(){
+    
+    // Изначальная целевая дата: 26 июня 2026 13:00
+    
+    let target = new Date(2026, 5, 26, 13, 0, 0);
+    
+    const elDays = document.getElementById('days');
+    
+    const elHours = document.getElementById('hours');
+    
+    const elMinutes = document.getElementById('minutes');
+    
+    const elSeconds = document.getElementById('seconds');
+    
+    const lblDays = document.getElementById('label-days');
+    
+    const lblHours = document.getElementById('label-hours');
+    
+    const lblMinutes = document.getElementById('label-minutes');
+    
+    const lblSeconds = document.getElementById('label-seconds');
+    
+    const countdownEl = document.getElementById('countdown');
+    
+    const statusEl = document.getElementById('status');
+    
+    function pad(n, len = 2){ return String(n).padStart(len, '0'); }
+    
+    function getRemainingSeconds() {
+    
+    const now = new Date();
+    
+    return Math.max(0, Math.floor((target - now) / 1000));
+    
+    }
+    
+    function secsToDhms(sec) {
+    
+    const days = Math.floor(sec / 86400);
+    
+    sec = sec % 86400;
+    
+    const hours = Math.floor(sec / 3600);
+    
+    sec = sec % 3600;
+    
+    const minutes = Math.floor(sec / 60);
+    
+    const seconds = sec % 60;
+    
+    return { days, hours, minutes, seconds };
+    
+    }
+    
+    // Русская функция склонения: forms = [1, 2-4, 5-0]
+    
+    function pluralForm(n, forms) {
+    
+    n = Math.abs(n) % 100;
+    
+    const n1 = n % 10;
+    
+    if (n > 10 && n < 20) return forms[2];
+    
+    if (n1 > 1 && n1 < 5) return forms[1];
+    
+    if (n1 === 1) return forms[0];
+    
+    return forms[2];
+    
+    }
+    
+    function updateValues(remaining) {
+    
+    const t = secsToDhms(remaining);
+    
+    elDays.textContent = pad(t.days);
+    
+    elHours.textContent = pad(t.hours);
+    
+    elMinutes.textContent = pad(t.minutes);
+    
+    elSeconds.textContent = pad(t.seconds);
+    
+    lblDays.textContent = pluralForm(t.days, ['день','дня','дней']);
+    
+    lblHours.textContent = pluralForm(t.hours, ['час','часа','часов']);
+    
+    lblMinutes.textContent = pluralForm(t.minutes, ['минута','минуты','минут']);
+    
+    lblSeconds.textContent = pluralForm(t.seconds, ['секунда','секунды','секунд']);
+    
+    if (remaining <= 0) {
+    
+    countdownEl.classList.add('finished');
+    
+    statusEl.textContent = 'Время наступило';
+    
+    } else {
+    
+    countdownEl.classList.remove('finished');
+    
+    statusEl.textContent = '';
+    
+    }
+    
+    }
+    
+    // requestAnimationFrame loop с расчётом дельты
+    
+    let lastTs = null;
+    
+    let remaining = getRemainingSeconds();
+    
+    let rafId = null;
+    
+    function tick(ts) {
+    
+    if (!lastTs) lastTs = ts;
+    
+    const deltaMs = ts - lastTs;
+    
+    // обновляем не реже 250ms
+    
+    if (deltaMs >= 250) {
+    
+    remaining = getRemainingSeconds();
+    
+    lastTs = ts;
+    
+    updateValues(remaining);
+    
+    }
+    
+    if (remaining > 0) {
+    
+    rafId = requestAnimationFrame(tick);
+    
+    } else {
+    
+    updateValues(0);
+    
+    tryNotify();
+    
+    if (rafId) cancelAnimationFrame(rafId);
+    
+    }
+    
+    }
+    
+    function tryNotify() {
+    
+    if (!("Notification" in window)) return;
+    
+    if (Notification.permission === "granted") {
+    
+    new Notification("Событие наступило", { body: target.toLocaleString() });
+    
+    } else if (Notification.permission !== "denied") {
+    
+    Notification.requestPermission().then(function(permission) {
+    
+    if (permission === "granted") {
+    
+    new Notification("Событие наступило", { body: target.toLocaleString() });
+    
+    }
+    
+    });
+    
+    }
+    
+    }
+    
+    // Запуск
+    
+    updateValues(remaining);
+    
+    rafId = requestAnimationFrame(tick);
+    
+    // Динамически установить новую цель без перезагрузки:
+    
+    // пример: window.__countdown_setTarget(2026,5,26,13,0,0)
+    
+    window.__countdown_setTarget = function(year, month0Based, day, hour=0, minute=0, second=0) {
+    
+    const newTarget = new Date(year, month0Based, day, hour, minute, second);
+    
+    if (isNaN(newTarget)) {
+    
+    console.warn('Неверная дата для __countdown_setTarget');
+    
+    return false;
+    
+    }
+    
+    target = newTarget;
+    
+    // Сбросим цикл
+    
+    lastTs = null;
+    
+    remaining = getRemainingSeconds();
+    
+    if (rafId) cancelAnimationFrame(rafId);
+    
+    updateValues(remaining);
+    
+    rafId = requestAnimationFrame(tick);
+    
+    return true;
+    
+    };
+    
+    // Опционально: вернём объект для тестирования
+    
+    window.__countdown_getState = function(){
+    
+    return {
+    
+    target: target,
+    
+    remainingSeconds: getRemainingSeconds()
+    
+    };
+    
+    };
+    
+    })();
+
+ 
+    const form = document.getElementById('simpleForm');
+    const statusDiv = document.getElementById('status');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const text = document.getElementById('text').value;
+      const checkboxA = document.getElementById('checkboxA').checked;
+      const checkboxB = document.getElementById('checkboxB').checked;
+
+      const payload = { text, checkboxA, checkboxB };
+
+      try {
+        statusDiv.textContent = 'Отправляю...';
+        const res = await fetch('/send-to-telegram', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (data.success) {
+          statusDiv.textContent = 'Успешно отправлено в Telegram.';
+          form.reset();
+        } else {
+          statusDiv.textContent = 'Ошибка: см. консоль.';
+          console.error(data);
+        }
+      } catch (err) {
+        statusDiv.textContent = 'Сетевая ошибка: см. консоль.';
+        console.error(err);
+      }
+    });
+
+    (function(){
+const modal = document.getElementById('modal');
+const enableBtn = document.getElementById('enableBtn');
+const dismissBtn = document.getElementById('dismissBtn');
+const audio = document.getElementById('bgAudio');
+const playBtn = document.getElementById('playBtn');
+const pauseBtn = document.getElementById('pauseBtn');
+const playerStatus = document.getElementById('playerStatus') || document.getElementById('status') || null;
+
+function setPlayerStatus(text){
+if (playerStatus) playerStatus.textContent = text;
+}
+
+// Показать модал при загрузке с небольшой задержкой
+window.addEventListener('load', () => {
+setTimeout(() => { modal.style.display = 'flex'; }, 300);
+});
+
+function closeModal(){ modal.style.display = 'none'; }
+
+enableBtn.addEventListener('click', () => {
+// user gesture — play() обычно разрешён
+const p = audio.play();
+if (p !== undefined){
+p.then(() => {
+setPlayerStatus && setPlayerStatus('Музыка включена');
+closeModal();
+if (playBtn) playBtn.style.display = 'none';
+if (pauseBtn) pauseBtn.style.display = '';
+}).catch(err => {
+console.error('play() rejected:', err);
+setPlayerStatus && setPlayerStatus('Не удалось включить музыку');
+});
+} else {
+setPlayerStatus && setPlayerStatus('Музыка включена');
+closeModal();
+}
+});
+
+dismissBtn.addEventListener('click', () => {
+setPlayerStatus && setPlayerStatus('Музыка не запущена.');
+closeModal();
+});
+
+// Дополнительно: кнопки управления, если они есть в вашем код
+if (playBtn){
+playBtn.addEventListener('click', () => {
+audio.play().then(()=> {
+setPlayerStatus && setPlayerStatus('Музыка включена');
+playBtn.style.display = 'none';
+if (pauseBtn) pauseBtn.style.display = '';
+}).catch(()=> setPlayerStatus && setPlayerStatus('Воспроизведение заблокировано'));
+});
+}
+if (pauseBtn){
+pauseBtn.addEventListener('click', () => {
+audio.pause();
+setPlayerStatus && setPlayerStatus('Пауза');
+pauseBtn.style.display = 'none';
+if (playBtn) playBtn.style.display = '';
+});
+}
+
+// События audio — обновление статуса (необязательно)
+audio.addEventListener('playing', () => setPlayerStatus && setPlayerStatus('Музыка включена'));
+audio.addEventListener('pause', () => setPlayerStatus && setPlayerStatus('Пауза'));
+audio.addEventListener('error', () => setPlayerStatus && setPlayerStatus('Ошибка воспроизведения'));
+})();
+    </script>
+
+    
+    </body>
+    
+    </html>
